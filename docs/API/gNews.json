@@ -83,6 +83,14 @@
         "IconPath": "Images\\icons\\gnews_us.png",
         "CommandKey": "top_stories",
         "RssUrl": "http://feeds.feedburner.com/gnews/us/top_stories"
+      },
+      {
+        "Name": "Nation",
+        "Url": "https://news.google.com/headlines/section/topic/NATION?hl=en-US&gl=US&ceid=US:en",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_us.png",
+        "CommandKey": "nation",
+        "RssUrl": "http://feeds.feedburner.com/gnews/us/nation"
       }
     ]
   }
