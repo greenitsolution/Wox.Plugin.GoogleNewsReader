@@ -204,7 +204,7 @@ namespace Wox.Plugin.GoogleNewsReader
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             using (var webClient = new WebClient())
             {
-                var json = webClient.DownloadString("https://github.com/greenitsolution/Wox.Plugin.GoogleNewsReader/raw/master/Wox.Plugin.GoogleNewsReader/sites.json");
+                var json = webClient.DownloadString("https://greenitsolution.github.io/Wox.Plugin.GoogleNewsReader/API/gNews.json");
                 var items = JsonConvert.DeserializeObject<List<SiteEntity>>(json);
                 return items;
             }
