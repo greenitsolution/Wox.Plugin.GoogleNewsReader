@@ -1,0 +1,69 @@
+﻿[
+  {
+    "Name": "Bangla | Bangladesh",
+    "Url": "https://news.google.com/?hl=bn&gl=BD&ceid=BD%3Abn",
+    "Description": null,
+    "IconPath": "Images\\icons\\gnews_bd.png",
+    "CommandKey": "bd",
+    "RssUrl": "https://news.google.com/news/rss/?hl=bn&gl=BD&ceid=BD%3Abn",
+
+    "SubItems": [
+      {
+        "Name": "Top Stories",
+        "Url": "https://news.google.com/?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "top_stories",
+        "RssUrl": "https://news.google.com/news/rss/?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "Nation",
+        "Url": "https://news.google.com/headlines/section/topic/NATION?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "nation",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/NATION?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "World",
+        "Url": "https://news.google.com/headlines/section/topic/WORLD?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "world",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/WORLD?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "Business",
+        "Url": "https://news.google.com/headlines/section/topic/BUSINESS?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "business",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/BUSINESS?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "Technology",
+        "Url": "https://news.google.com/headlines/section/topic/TECHNOLOGY?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "technology",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/TECHNOLOGY?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "Entertainment",
+        "Url": "https://news.google.com/headlines/section/topic/ENTERTAINMENT?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "entertainment",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/ENTERTAINMENT?hl=bn&gl=BD&ceid=BD%3Abn"
+      },
+      {
+        "Name": "Sports",
+        "Url": "https://news.google.com/headlines/section/topic/SPORTS?hl=bn&gl=BD&ceid=BD%3Abn",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "sports",
+        "RssUrl": "https://news.google.com/news/rss/headlines/section/topic/SPORTS?hl=bn&gl=BD&ceid=BD%3Abn"
+      }
+    ]
+  }
+]

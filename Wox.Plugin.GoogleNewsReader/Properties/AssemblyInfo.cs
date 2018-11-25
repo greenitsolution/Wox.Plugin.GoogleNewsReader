@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Wox.Plugin.MyFeedReader")]
+[assembly: AssemblyTitle("Wox.Plugin.GoogleNewsReader")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Wox.Plugin.MyFeedReader")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("Wox.Plugin.GoogleNewsReader")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("52b1a154-3177-4f65-8a83-b6c41029c331")]
+[assembly: Guid("6976C4A6-C8CA-40A3-8FD3-210838BEDD29")]
 
 // Version information for an assembly consists of the following four values:
 //

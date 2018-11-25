@@ -1,4 +1,4 @@
-﻿using Wox.Plugin.MyFeedReader.Models;
+﻿using Wox.Plugin.GoogleNewsReader.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace Wox.Plugin.MyFeedReader
+namespace Wox.Plugin.GoogleNewsReader
 {
     public class Main : IPlugin
     {
@@ -42,6 +42,7 @@ namespace Wox.Plugin.MyFeedReader
                 {
                     results.Add(ResultForSitesCommandAutoComplete(query.ActionKeyword, site));
                 }
+
                 return results;
             }
 
@@ -49,7 +50,9 @@ namespace Wox.Plugin.MyFeedReader
             if (mainSite == null)
             {
                 // load main site suggestion items
-                var suggestions = _allSites.Where(x => x.Name.ToLower().Contains(query.FirstSearch.ToLower()) || x.CommandKey.ToLower().Contains(query.FirstSearch.ToLower())).ToList();
+                var suggestions = _allSites.Where(x =>
+                    x.Name.ToLower().Contains(query.FirstSearch.ToLower()) ||
+                    x.CommandKey.ToLower().Contains(query.FirstSearch.ToLower())).ToList();
                 foreach (var suggestItem in suggestions)
                 {
                     results.Add(ResultForSitesCommandAutoComplete(query.ActionKeyword, suggestItem));
@@ -68,7 +71,8 @@ namespace Wox.Plugin.MyFeedReader
                 {
                     foreach (var subSite in mainSite.SubItems)
                     {
-                        results.Add(ResultForSubSitesCommandAutoComplete(query.ActionKeyword, mainSite.CommandKey, subSite));
+                        results.Add(ResultForSubSitesCommandAutoComplete(query.ActionKeyword, mainSite.CommandKey,
+                            subSite));
                     }
 
                     return results;
@@ -78,7 +82,8 @@ namespace Wox.Plugin.MyFeedReader
                 return results;
             }
 
-            if (!string.IsNullOrWhiteSpace(query.FirstSearch) && !string.IsNullOrWhiteSpace(query.SecondSearch) && string.IsNullOrWhiteSpace(query.ThirdSearch))
+            if (!string.IsNullOrWhiteSpace(query.FirstSearch) && !string.IsNullOrWhiteSpace(query.SecondSearch) &&
+                string.IsNullOrWhiteSpace(query.ThirdSearch))
             {
                 //MessageBox.Show($"2{query.FirstSearch}-{query.SecondSearch}-{query.ThirdSearch}");
 
@@ -116,7 +121,8 @@ namespace Wox.Plugin.MyFeedReader
                 }
             }
 
-            if (!string.IsNullOrWhiteSpace(query.FirstSearch) && !string.IsNullOrWhiteSpace(query.SecondSearch) && !string.IsNullOrWhiteSpace(query.ThirdSearch))
+            if (!string.IsNullOrWhiteSpace(query.FirstSearch) && !string.IsNullOrWhiteSpace(query.SecondSearch) &&
+                !string.IsNullOrWhiteSpace(query.ThirdSearch))
             {
                 // MessageBox.Show($"3{query.FirstSearch}-{query.SecondSearch}-{query.ThirdSearch}");
 
@@ -150,7 +156,9 @@ namespace Wox.Plugin.MyFeedReader
 
             if (mainSite == null)
             {
-                var suggestions = _allSites.Where(x => x.Name.ToLower().Contains(query.FirstSearch.ToLower()) || x.CommandKey.ToLower().Contains(query.FirstSearch.ToLower())).ToList();
+                var suggestions = _allSites.Where(x =>
+                    x.Name.ToLower().Contains(query.FirstSearch.ToLower()) ||
+                    x.CommandKey.ToLower().Contains(query.FirstSearch.ToLower())).ToList();
                 foreach (var suggestItem in suggestions)
                 {
                     results.Add(ResultForSitesCommandAutoComplete(query.ActionKeyword, suggestItem));
@@ -160,19 +168,22 @@ namespace Wox.Plugin.MyFeedReader
             }
 
             var baseSuggestions = mainSite.SubItems
-                .Where(x => x.Name.ToLower().Contains(searchKey.ToLower()) || x.CommandKey.ToLower().Contains(searchKey.ToLower()))
+                .Where(x => x.Name.ToLower().Contains(searchKey.ToLower()) ||
+                            x.CommandKey.ToLower().Contains(searchKey.ToLower()))
                 .ToList();
 
             if (baseSuggestions.Any())
             {
                 foreach (var suggestItem in baseSuggestions)
                 {
-                    results.Add(ResultForSubSitesCommandAutoComplete(query.ActionKeyword, mainSite.CommandKey, suggestItem));
+                    results.Add(ResultForSubSitesCommandAutoComplete(query.ActionKeyword, mainSite.CommandKey,
+                        suggestItem));
                 }
 
                 return results;
             }
-            return new List<Result> { new Result { Title = "No items for " + searchKey } };
+
+            return new List<Result> {new Result {Title = "No items for " + searchKey}};
         }
 
         public void Init(PluginInitContext context)
@@ -193,13 +204,15 @@ namespace Wox.Plugin.MyFeedReader
 
         public SiteEntity GetSiteByCommand(string mainSiteCommand)
         {
-            return _allSites.FirstOrDefault(x => x.CommandKey.Trim().Equals(mainSiteCommand.Trim(), StringComparison.OrdinalIgnoreCase));
+            return _allSites.FirstOrDefault(x =>
+                x.CommandKey.Trim().Equals(mainSiteCommand.Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
         public SubSiteEntity GetSubSiteByCommand(string mainSiteCommand, string subSiteCommand)
         {
             var mainSite = GetSiteByCommand(mainSiteCommand);
-            return mainSite?.SubItems?.FirstOrDefault(x => x.CommandKey.Trim().Equals(subSiteCommand.Trim(), StringComparison.OrdinalIgnoreCase));
+            return mainSite?.SubItems?.FirstOrDefault(x =>
+                x.CommandKey.Trim().Equals(subSiteCommand.Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
         private Result ResultForSitesCommandAutoComplete(string actionKeyword, SiteEntity site)
@@ -209,7 +222,9 @@ namespace Wox.Plugin.MyFeedReader
             {
                 Title = site.Name,
                 IcoPath = site.IconPath,
-                SubTitle = string.IsNullOrWhiteSpace(site.Description) ? $"{site.CommandKey}" : $"{site.CommandKey} - {site.Description}",
+                SubTitle = string.IsNullOrWhiteSpace(site.Description)
+                    ? $"{site.CommandKey}"
+                    : $"{site.CommandKey} - {site.Description}",
                 Action = e =>
                 {
                     _context.API.ChangeQuery($"{actionKeyword}{seperater}{site.CommandKey}{seperater}");
@@ -219,17 +234,21 @@ namespace Wox.Plugin.MyFeedReader
             return result;
         }
 
-        private Result ResultForSubSitesCommandAutoComplete(string actionKeyword, string mainCommand, SubSiteEntity subSite)
+        private Result ResultForSubSitesCommandAutoComplete(string actionKeyword, string mainCommand,
+            SubSiteEntity subSite)
         {
             const string seperater = Plugin.Query.TermSeperater;
             var result = new Result
             {
                 Title = subSite.Name,
                 IcoPath = subSite.IconPath,
-                SubTitle = string.IsNullOrWhiteSpace(subSite.Description) ? $"{subSite.CommandKey}" : $"{subSite.CommandKey} - {subSite.Description}",
+                SubTitle = string.IsNullOrWhiteSpace(subSite.Description)
+                    ? $"{subSite.CommandKey}"
+                    : $"{subSite.CommandKey} - {subSite.Description}",
                 Action = e =>
                 {
-                    _context.API.ChangeQuery($"{actionKeyword}{seperater}{mainCommand}{seperater}{subSite.CommandKey}{seperater}");
+                    _context.API.ChangeQuery(
+                        $"{actionKeyword}{seperater}{mainCommand}{seperater}{subSite.CommandKey}{seperater}");
                     return false;
                 }
             };
@@ -243,8 +262,8 @@ namespace Wox.Plugin.MyFeedReader
                 var result = new Result
                 {
                     Title = baseSiteEntity.Name,
-                    SubTitle = "Open site " + baseSiteEntity.Name,
-                    IcoPath = $"{ImagePathPrefix}open.png",
+                    SubTitle = "Open In Browser",
+                    IcoPath = $"{ImagePathPrefix}open_in_browser.png",
                     Score = 99999,
                     Action = (x) =>
                     {
@@ -264,7 +283,7 @@ namespace Wox.Plugin.MyFeedReader
                 return result;
             }
 
-            return new Result{Title = "No items..."};
+            return new Result {Title = "No items..."};
         }
 
         private List<Result> LoadRssItems(BaseSiteEntity site)
@@ -276,7 +295,7 @@ namespace Wox.Plugin.MyFeedReader
                 var feed = CodeHollow.FeedReader.FeedReader.ReadAsync(site.RssUrl).Result;
                 foreach (var item in feed.Items)
                 {
-                    var tmp = new Result
+                    var gNews = new Result
                     {
                         Title = PluginHelper.StripHtml(item.Title),
                         IcoPath = site.IconPath,
@@ -295,12 +314,13 @@ namespace Wox.Plugin.MyFeedReader
                         }
                     };
 
-                    var date = item.PublishingDate?.ToString("yyyyMMdd hh:mm tt");
-                    tmp.SubTitle = string.IsNullOrWhiteSpace(item.Author) ? date : $"{item.Author} - {date}";
+                    var date = item.PublishingDate?.ToString("dd/MM/yyyy hh:mm tt");
+                    gNews.SubTitle = string.IsNullOrWhiteSpace(item.Author) ? date : $"{item.Author} - {date}";
 
-                    results.Add(tmp);
+                    results.Add(gNews);
                 }
             }
+
             return results;
         }
     }

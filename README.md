@@ -1,13 +1,5 @@
-﻿# MyFeedReader
-A plugin allow us read rss feed
+﻿# Google News Reader
+A wox plugin allow us to read Google News.
 
 # Install
-> wpm install My Feed Reader
-
-# Config
-You can setup rss feed by sites.json in wox plugin installation folder
-
-# Screenshot
-<img src="https://raw.githubusercontent.com/minhhungit/Wox.Plugin.MyFeedReader/master/wiki/Images/hinh%201.png" />
-<img src="https://raw.githubusercontent.com/minhhungit/Wox.Plugin.MyFeedReader/master/wiki/Images/hinh%202.png" />
-<img src="https://raw.githubusercontent.com/minhhungit/Wox.Plugin.MyFeedReader/master/wiki/Images/hinh%203.png" />
+> wpm install Google News Reader

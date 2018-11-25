@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Wox.Plugin.MyFeedReader
+namespace Wox.Plugin.GoogleNewsReader
 {
     public class PluginHelper
     {

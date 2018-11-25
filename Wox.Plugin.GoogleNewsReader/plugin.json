@@ -1,0 +1,12 @@
+{
+  "ID": "GNGITS7DFE60423B8DBF460AADEF6E2D",
+  "ActionKeyword": "gnews",
+  "Name": "Google News Reader",
+  "Description": "A wox plugin to help us read Google News.",
+  "Author": "Hung Vo, Sobuj",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "",
+  "IcoPath": "Images\\gnews.png",
+  "ExecuteFileName": "Wox.Plugin.GoogleNewsReader.dll"
+}

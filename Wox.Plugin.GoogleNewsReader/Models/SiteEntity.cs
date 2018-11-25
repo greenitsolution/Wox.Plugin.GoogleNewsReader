@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Wox.Plugin.MyFeedReader.Models
+namespace Wox.Plugin.GoogleNewsReader.Models
 {
     public class SiteEntity : BaseSiteEntity
     {
