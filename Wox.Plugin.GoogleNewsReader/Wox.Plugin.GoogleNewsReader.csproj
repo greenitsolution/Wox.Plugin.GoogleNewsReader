@@ -75,9 +75,7 @@
     <None Include="plugin.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="sites.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Content Include="sites.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\gnews.png">

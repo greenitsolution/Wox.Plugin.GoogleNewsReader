@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
@@ -193,10 +194,17 @@ namespace Wox.Plugin.GoogleNewsReader
 
         private List<SiteEntity> LoadSites()
         {
-            var loc = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            /*var loc = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             using (var r = new StreamReader($"{loc}\\sites.json"))
             {
                 var json = r.ReadToEnd();
+                var items = JsonConvert.DeserializeObject<List<SiteEntity>>(json);
+                return items;
+            }*/
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            using (var webClient = new WebClient())
+            {
+                var json = webClient.DownloadString("https://github.com/greenitsolution/Wox.Plugin.GoogleNewsReader/raw/master/Wox.Plugin.GoogleNewsReader/sites.json");
                 var items = JsonConvert.DeserializeObject<List<SiteEntity>>(json);
                 return items;
             }
