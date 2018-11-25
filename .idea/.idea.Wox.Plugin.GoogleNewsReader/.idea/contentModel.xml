@@ -5,6 +5,7 @@
     <e p="C:\Users\abuhenasobuj\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Wox.Plugin.GoogleNewsReader.-1440000006.00" t="ExcludeRecursive" />
     <e p="D:\Personal\Project\GitHub\Wox\Wox.Plugin.GoogleNewsReader" t="IncludeFlat">
       <e p=".git\info\exclude" t="IncludeRecursive" />
+      <e p="docs\API\gNews.json" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Wox.Plugin.GoogleNewsReader" t="IncludeRecursive">
         <e p="app.config" t="Include" />

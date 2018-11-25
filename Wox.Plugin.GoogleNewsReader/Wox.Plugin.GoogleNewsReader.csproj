@@ -75,6 +75,9 @@
     <None Include="plugin.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="..\docs\API\gNews.json">
+      <Link>gNews.json</Link>
+    </Content>
     <Content Include="sites.json" />
   </ItemGroup>
   <ItemGroup>

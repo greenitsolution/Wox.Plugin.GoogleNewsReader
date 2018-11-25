@@ -65,5 +65,25 @@
         "RssUrl": "http://feeds.feedburner.com/gnews/bd/sports"
       }
     ]
+  },
+
+  {
+    "Name": "English | United States",
+    "Url": "https://news.google.com/?hl=en-US&gl=US&ceid=US:en",
+    "Description": null,
+    "IconPath": "Images\\icons\\gnews_bd.png",
+    "CommandKey": "us",
+    "RssUrl": "http://feeds.feedburner.com/gnews/us/top_stories",
+
+    "SubItems": [
+      {
+        "Name": "Top Stories",
+        "Url": "https://news.google.com/?hl=en-US&gl=US&ceid=US:en",
+        "Description": null,
+        "IconPath": "Images\\icons\\gnews_bd.png",
+        "CommandKey": "top_stories",
+        "RssUrl": "http://feeds.feedburner.com/gnews/us/top_stories"
+      }
+    ]
   }
 ]
