@@ -14,11 +14,11 @@ namespace Wox.Plugin.GoogleNewsReader
     {
         private PluginInitContext _context;
         private static readonly string ImagePathPrefix = "Images\\";
-        private readonly List<SiteEntity> _allSites;
+        public static List<SiteEntity> _allSites;
 
         public Main()
         {
-            _allSites = LoadSites();
+            //_allSites = LoadSites();
         }
 
         public static string SerializeObject<T>(T toSerialize)
@@ -34,6 +34,9 @@ namespace Wox.Plugin.GoogleNewsReader
 
         public List<Result> Query(Query query)
         {
+            if (query != null) {
+                _allSites = LoadSites();
+            }
             var results = new List<Result>();
 
             if (string.IsNullOrWhiteSpace(query.Search))
