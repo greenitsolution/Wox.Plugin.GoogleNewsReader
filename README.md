@@ -1,5 +1,5 @@
 ﻿# Google News Reader
-A wox plugin allow us to read Google News.
+Read Google News through this Wox Plugin Quickly & Easily.
 
 # Install
 > wpm install Google News Reader
