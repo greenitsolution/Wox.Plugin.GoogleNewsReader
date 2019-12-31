@@ -2,7 +2,7 @@
   "ID": "GNGITS7DFE60423B8DBF460AADEF6E2D",
   "ActionKeyword": "gnews",
   "Name": "Google News Reader",
-  "Description": "A wox plugin to help us read Google News.",
+  "Description": "Read Google News through this Wox Plugin Quickly & Easily.",
   "Author": "Hung Vo, Sobuj",
   "Version": "1.0.1",
   "Language": "csharp",
